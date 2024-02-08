@@ -1,0 +1,39 @@
+Reading Notes
+1.1
+- Nuclear isotope Uranium-235 is one of the most commonly known unstable nuclei; it has 143 neutrons and 92 protons.
+- Its average lifetime is 1*10^9 years. 
+- Should Nu(t) be the number of uranium nuclei present in  a sample at a time t, then our behavior can be listed as (dNu.dt) = -Nu/tau. Here, tau is a time constant for decay.
+1.2
+- Another way that we can obtain Nu as a function of t is by calling its value at one number of t and estimating this value at other times. With this initial value problem, we can establish a Taylor expansion of Nu, where:
+- Nu(Delta(t)) = Nu(0) + dNu/dt*Delta(t) + 0.5d^2Nu/dt^2 + …, (eq. 1.3)
+- We look to try and find an approximation of Delta(t), and if we have it take a smaller value, then we are able to have less errors to account for. 
+1.3
+- Programming is an individualized process where habits can come in hand that can aid with breaking down code and developing skills. 
+- Four basic tasks for the overall structure of a program:
+    - declare variables
+    - initialize all variables/parameters
+    - do the calculations
+    - store the results
+- On page 5 for the code in radioactive decay, they begin with a couple of declare lines, and run their values(n_uranium,t,tau,dt,n) through a couple of functions, such as initialize, calculate and store. 
+- When trying to implement Euler’s method, we must implement the theorem in a for loop, and include parameters of (i+1) and (i) to be able to define our increasing terms in the method as we add more terms. 
+- Both the programs in Fortran and C outlined great ways to be able to determine how we can run Euler’s theorem in our code to see how Nu would vary with time. 
+- We can easily do so with a graph. 
+1.4
+- If we do not check our code after we produce it, how can we be sure of our result?
+- We should ensure that we get an accurate result, and that we could convince someone of how realistic it could be. 
+- We should have a solution that is comparable with exact results (to certain limits within the parameters).
+- Do we get the same answer for different step sizes? Since we incorporate a time-step variable, we need to have a final answer independent of the parameters to ensure its accuracy. 
+1.5
+- Numerical errors are critical for trying to find the main solution for why an algorithm would not work, because there could easily have been a miscalculation or sizing error in the code. 
+- Errors that occurred were a result form the approximation of the data as well as the numerical precision of the numbers; these as a result are referred to as round-off errors. 
+- When looking at the discretization of time, space and other values, 2 questions arise:
+    - How can we know that the errors introduced in the discreteness are actually negligible?
+    - How do we choose the value of a step size for a calculation?
+- We should always check to see that our calculated result can provide and converge closely to a fixed value as our step size grows smaller. 
+- How close our value can come down to the step size in the first place. 
+1.6
+- There are certain guidelines that if we were to incorporate them into our code, we would be able to translate how we program to another level.
+- Firstly, we should always look to utilize some form of a program structure to organize tasks and make our program readable for others to interpret and understand it. 
+- We should use creative names for variables and routines when coding to make it easy to read. 
+- Use comment statements to explain what we are doing and to describe variables.
+- The more clear and easy to interpret our code is, the better it can run. 
