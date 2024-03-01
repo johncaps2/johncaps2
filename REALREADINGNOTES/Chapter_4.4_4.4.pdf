@@ -1,1 +1,66 @@
 
+Reading Notes
+Intro
+⁃	In this chapter, we focus on the effects of planetary motion and how it can be applied into several problems.
+⁃	We start off with the easiest cast: a Sun and a single planet to investigate the rules that govern this modern system.
+⁃	For units, we are using AU for our position in the x and y directions.
+4.1
+⁃	According to Newton’s law of gravitation, the magnitude of the force of gravity is defines as:
+⁃	Fg = (G*Ms*Me)/r^2 G = gravitational constant Ms = mass of Sun Me = mass of Earth r = the distance between both objec
+⁃	This goes off the assumption that the Sun’s mass is too large, so that its motion can be neglected as we only focus on the motion of the Earth here.
+⁃	When we look to Newton’s second law of motion, we can get separate equations for the Force of Gravity (in certain directions):
+⁃	d^2x/dt^2 = -Fg(x)/Me
+⁃	d^2y/dt^2 = -Fg(y)/Me
+⁃	Fg(x) = -(G*Ms*Me)*cos(θ) / r^2, OR Fg(x) = -(G*Ms*Me)*x / r^3
+⁃	We also need to take into account the unit of mass to complete our system.
+⁃	While we know that the circular force is equal to m*v^2/r, we have to rearrange this to determine:
+⁃	Me*v^2/r = Fg = G*ms*me/r^2
+⁃	If we rearrange these, we can get:
+⁃	G*Ms = v^2*r = 4*pi^2*AU^3 / yr^2
+⁃	When thinking about planetary motion, it is best to analyze it graphically. By plotting the position of the planet (once it is available from a calculation), we can observe its behavior of its orbit to see the motion of Earth and how it would compare to other planetary bodies. 
+⁃	It should be noted that all planets have elliptical orbits with the Sun as the focal point of all orbits. 
+⁃	Kepler’s Three Laws:
+⁃	1: The orbit of a planet is an ellipse with the Sun at one of the two foci
+⁃	2: A line segment joining a planet and the Sun sweeps out equal areas during equal intervals of time
+⁃	3: The square of a planet’s orbital period is proportional to the cube of the length of the semi-major axis of its orbit
+4.2
+⁃	For a 2-body system, all of Kepler’s law are consequences of the fact that the gravitational force must obey the inverse-square law. 
+⁃	The moving body in an equivalent system has a mass which is equal to the reduced mass, which is equal to: μ = (m1*m2)/(m1+m2).
+⁃	The position of the equivalent body is given by the relative displacement vector r, which states: r = r2 - r1.
+⁃	Since F(r) now has the inverse square form, the solution in our solar system case can be expressed as: 1/r = (μ*G*Ms*Mp)/L^2 *(1 - ecos(theta + theta_))
+⁃	Formulas can also be derived to compute to find the min and max velocities based on our angular momentum (if it is conserved). We also can look at the planet’s closest point (the perihelion) and the farthest point (the aphelion) to get a better understanding of how this behavior works. 
+ 
+-	We can also observe the elliptical axis in Figure 4.3 to get a better understanding of how the semi major and minor axes give an orbit its shape, as well as how the eccentricity comes into play. 
+ 
+-	When looking at the different beta values, we also can see how they change the simulation of the elliptical orbit as well. For all of these examples, the Sun was at the center of the origin. 
+ 
+
+
+4.3
+- In astrology, we saw an experiment being performed where scientists wanted to test the accuracy of the inverse-square law. 
+- The two planets that have the most elliptical orbits are Mercury and Pluto. Mercury makes one complete rotation every 230,000 years.
+- One of the first triumphs in general relativity was discovering that general relativity can look similar for the force itself due to gravity (if two objects are not too close to each other). 
+- Force law predicted from general relativity: 
+
+ 
+-	The conversation of total energy can be defined as the kinetic energy of the system plus the potential energy of Mercury. We want to ignore the kinetic energy of the Sun. 
+-	This is stated in the equation below, where we account for the masses of the Sun and Mercury:
+ 
+4.4
+- When looking at a two-body system, the problem of them interacting as a result of the inverse-square law can be directly solved if we use the Kepler laws. 
+- By adding a third planet, we begin to focus on a three-body system; while this has been studied for centuries, there have only been a few results that are directly impactful and they have been a major problem for celestial mechanics. 
+- We have to first set up a program to model the two planets, their gravitational force between them, and represent the magnitude of the two planet’s force is shown below:
+  
+
+-	We can then break up this force in terms of components: 
+o	In the x-direction, we would yield -G*Mj*Me/(r^2(EJ)) * cos(θ), which is equal to -G*Mj*Me(Xe – Xj)/(r^2(EJ)), and a similar equation can be represented for the y-direction as well by substituting sin(θ), Ye and Yj for cos(θ), Xe and Xj respectively. 
+o	The Xe and Xj represent the coordinates of Earth and Jupiter.
+-	We can also derive an equation of motion for the x-component of Earth’s velocity:
+ 
+
+-	When studying the three-body simulation, we can deduce that both Earth and Jupiter share stable, circular orbits – this means that Jupiter has little to no effect on a normal scale for both planets. 
+-	If we were to use a simulation that increased 
+-	However, should increase the mass of Jupiter by a factor of 1000, this would result in the Earth having an irregular orbit due to not taking into account the motion of the Sun (since this mass is approximately the equivalent on the Sun), 
+-	To add on, the orbit of Earth gets rejected completely from the solar system. 
+
+ 
